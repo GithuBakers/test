@@ -1,40 +1,10 @@
 /**
  * 模拟ALU进行整数和浮点数的四则运算
- * @author 161250170_徐翔哲
+ * @author [请将此处修改为“学号_姓名”]
  *
  */
 
 public class ALU {
-
-
-	private String showBits(int a,int len){
-		StringBuffer buffer=new StringBuffer();
-		int temp;
-		int mask=1<<31;
-		a<<=32-len;
-		if(a==0){
-			buffer.append("0");
-		}else {
-			while(a!=0){
-				temp=(a&mask)>>>31;
-				buffer.append(String.valueOf(temp));
-				a<<=1;
-			}
-		}
-		if(buffer.length()<len){
-			int diff=len-buffer.length();
-			for(;diff>0;diff--){
-				buffer.append("0");
-			}
-		}else if(buffer.length()>len){
-			buffer.setLength(len);
-		}
-		return buffer.toString();
-	}
-
-
-
-
 
 	/**
 	 * 生成十进制整数的二进制补码表示。<br/>
@@ -44,18 +14,8 @@ public class ALU {
 	 * @return number的二进制补码表示，长度为length
 	 */
 	public String integerRepresentation (String number, int length) {
-		int a=Integer.parseInt(number);
-		String ret;
-		if(a>0){
-			ret=showBits(a,length);
-		}else {
-			int power2=1;
-			for(int i=0;i<=length;i++){
-				power2<<=1;
-			}
-			ret=showBits(power2+a,length);
-		}
-		return ret;
+		// TODO YOUR CODE HERE.
+		return null;
 	}
 	
 	/**

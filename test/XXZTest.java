@@ -4,9 +4,17 @@ import static org.junit.Assert.*;
  * Created by xuxiangzhe on 2017/4/11.
  */
 public class XXZTest {
+    private ALU alu=new ALU();
     @org.junit.Test
     public void integerRepresentation() throws Exception {
-
+        assertEquals("11111111",alu.integerRepresentation("-1",8));
+        assertEquals("1100",alu.integerRepresentation("-4",4));
+        assertEquals("10000000",alu.integerRepresentation("-128",8));
+        assertEquals("10000000",alu.integerRepresentation("128",8));
+        assertEquals("0000000",alu.integerRepresentation("128",7));
+        assertEquals("010000000",alu.integerRepresentation("128",9));
+        assertEquals("00000011",alu.integerRepresentation("3",8));
+        assertEquals("10000000000000000000000000000000",alu.integerRepresentation("-2147483648",32));
     }
 
     @org.junit.Test
